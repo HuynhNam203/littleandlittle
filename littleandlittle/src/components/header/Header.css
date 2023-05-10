@@ -1,0 +1,87 @@
+.header {
+  width: 100%;
+  height: 107.82px;
+  background-color: #ed7200;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  color: #ffffff;
+  box-shadow: 0px 4px 35px 0px #a13a00bf;
+  border-radius: 0 0 75% 75%/ 0 0 50px 50px;
+}
+
+#logo {
+  width: 229px;
+  height: 91px;
+  margin-left: 151px;
+  padding: 0.4rem;
+}
+
+.nav-pages {
+  width: 541px;
+  height: 42px;
+}
+
+.nav-pages > ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+
+.nav-pages > ul > li {
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+li > a {
+  color: inherit;
+  text-decoration: none;
+  padding: 10px 24px;
+
+}
+
+.nav-pages > ul > li > .link-to.active {
+  border: 2px solid #ffffff;
+  border-radius: 33px;
+}
+
+.hotline {
+  width: 137px;
+  height: 42px;
+  margin-right: 151px;
+  display: flex;
+}
+
+.hotline > h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.hotline > .telephone {
+  border: 1px solid #ffffff;
+  width: 32px;
+  height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  margin: 7px;
+}
+
+.hotline > .telephone > #phone {
+  margin-top: 8px;
+}
