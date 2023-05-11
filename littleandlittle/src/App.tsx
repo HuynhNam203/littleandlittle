@@ -6,10 +6,15 @@ import Event from './components/event/Event';
 import Payment from './components/payment/Payment';
 import PaySuc from './components/paymentsuccess/PaySuc';
 import Contact from './components/contact/Contact';
+import Background from "./assets/background.svg";
 
 
 const App: FC = () => {
   return (
+    <div>
+      <img src={Background} alt="background" id="background" />
+      
+
     <BrowserRouter>
     <Routes>
       <Route index element={<Home/>}/>
@@ -20,6 +25,7 @@ const App: FC = () => {
       <Route path='/Contact' element={<Contact />} />
     </Routes>
     </BrowserRouter>
+    </div>
   );
 }
 

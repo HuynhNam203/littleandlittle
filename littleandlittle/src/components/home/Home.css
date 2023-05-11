@@ -1,8 +1,45 @@
-.background {
-    height: 1092.0247802734375px;
-width: 1794.3218994140625px;
-left: -10px;
-top: 1px;
-border-radius: 0px;
-
+#tittle {
+    position: absolute;
+  width: 280px;
+  height: 100px;
+  margin-left: 270px;
+  margin-top: 117px;
+  color: white;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 50px;
+  font-family: "iCiel Koni Black";
 }
+
+#damsenlogo {
+    position: absolute;
+    margin-left: 142px;
+    margin-top: 127px;
+  }
+
+  #home_background {
+    position: absolute;
+    width: 115vh;
+    height: 95vh;
+    top: 31px;
+    left: 524px;
+  }
+
+  #news_board {
+    position: absolute;
+    width: 145vh;
+    height: 56vh;
+    top: 258px;
+    left: 149px;
+    
+  }
+
+  #pink_hair {
+    position: absolute;
+    width: 32vh;
+    top: 247px;
+    height: 63vh;
+    right: 545px;
+  }
+

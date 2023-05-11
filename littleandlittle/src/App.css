@@ -1,9 +1,29 @@
 body {
+  position: relative;
   width: 100vh;
-  height: 96vh;
+  height: 95vh;
   background: radial-gradient(
     97.91% 60.14% at 50% 50%,
     #ffdb7e 0%,
     #ff7a00 100%
   );
+}
+
+#background {
+  position: absolute;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 45px;
+  margin-top: 27px;
+}
+
+
+@font-face {
+  font-family: "iCiel Koni Ornament Black";
+  src: url("./components/fonts/iCiel Koni Ornament Black.ttf");
+}
+
+@font-face {
+  font-family: "iCiel Koni Black";
+  src: url("./components/fonts/iCiel Koni Black.ttf");
 }
