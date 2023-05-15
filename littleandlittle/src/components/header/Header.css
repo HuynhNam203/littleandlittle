@@ -11,6 +11,7 @@
   color: #ffffff;
   box-shadow: 0px 4px 35px 0px #a13a00bf;
   border-radius: 0 0 75% 75%/ 0 0 50px 50px;
+  z-index: 1;
 }
 
 #logo {

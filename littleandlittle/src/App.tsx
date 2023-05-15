@@ -7,6 +7,7 @@ import Payment from './components/payment/Payment';
 import PaySuc from './components/paymentsuccess/PaySuc';
 import Contact from './components/contact/Contact';
 import Background from "./assets/background.svg";
+import EventDetail from './components/event/EventDetail';
 
 
 const App: FC = () => {
@@ -19,7 +20,7 @@ const App: FC = () => {
     <Routes>
       <Route index element={<Home/>}/>
       <Route path='/Event' element={<Event />} />
-      <Route path='/EventDetail' element={<Event />} />
+      <Route path='/Event/Detail' element={<EventDetail />} />
       <Route path='/Payment' element={<Payment />} />
       <Route path='/PaySuc' element={<PaySuc />} />
       <Route path='/Contact' element={<Contact />} />
