@@ -17,14 +17,24 @@
   width: 1400px;
   height: 600px;
 }
+
+#pre-button{
+  position: absolute;
+  top: 450px;
+  left: 86px;
+  width: 40px;
+}
+
+#ne-button{
+  position: absolute;
+  top: 450px;
+  left: 1290px;
+  width: 40px;
+}
+
 .event-banner {
   display: flex;
-
-  /* column-gap: 28px; */
 }
-/* #tieu-de {
-  text-align: center;
-} */
 
 #heading-title {
   position: absolute;
@@ -47,7 +57,7 @@
   width: 270px;
   height: 350px;
   top: 306px;
-  left: 179px;
+  left: 154px;
   margin-right: 28px;
   background-color: #ffffff;
   border-radius: 20px;

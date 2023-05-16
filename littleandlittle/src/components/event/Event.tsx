@@ -7,6 +7,8 @@ import PG1 from "../../assets/khu-vui-choi1.png";
 import PG2 from "../../assets/khu-vui-choi2.png";
 import PG3 from "../../assets/khu-vui-choi3.png";
 import Calendar from "../../assets/calendarIcon.svg";
+import Pre_Button from "../../assets/previos-button.svg";
+import Next_Button from "../../assets/next-button.svg";
 import "./Event.css";
 import { NavLink } from "react-router-dom";
 import EventDetail from "./EventDetail";
@@ -19,6 +21,8 @@ const Event = () => {
       <img src={RB1} alt="rb" id="rb1" />
       <img src={RB2} alt="rb" id="rb2" />
       <img src={HG} alt="rb" id="hg" />
+      <button><img src={Pre_Button} alt="button" id="pre-button" /></button>
+      <button><img src={Next_Button} alt="button" id="ne-button" /></button>
       <div className="event-banner">
         <div className="banner">
           <div className="playground1">
@@ -29,7 +33,7 @@ const Event = () => {
             <p id="event-name">Đầm sen Park</p>
             <span id="event-date">
               <img src={Calendar} />
-              <a>30/05/2021 - 01/06/2021</a>
+              <a>&nbsp;30/05/2021 - 01/06/2021</a>
             </span>
             <h1 id="event-price">25.000 VNĐ</h1>
             <div className="link-to-ed">
@@ -48,7 +52,7 @@ const Event = () => {
             <p id="event-name">Đầm sen Park</p>
             <span id="event-date">
               <img src={Calendar} />
-              <a>30/05/2021 - 01/06/2021</a>
+              <a>&nbsp;30/05/2021 - 01/06/2021</a>
             </span>
             <h1 id="event-price">25.000 VNĐ</h1>
             <div className="link-to-ed">
@@ -67,7 +71,7 @@ const Event = () => {
             <p id="event-name">Đầm sen Park</p>
             <span id="event-date">
               <img src={Calendar} />
-              <a>30/05/2021 - 01/06/2021</a>
+              <a>&nbsp;30/05/2021 - 01/06/2021</a>
             </span>
             <h1 id="event-price">25.000 VNĐ</h1>
             <div className="link-to-ed">
@@ -86,7 +90,7 @@ const Event = () => {
             <p id="event-name">Đầm sen Park</p>
             <span id="event-date">
               <img src={Calendar} />
-              <a>30/05/2021 - 01/06/2021</a>
+              <a>&nbsp;30/05/2021 - 01/06/2021</a>
             </span>
             <h1 id="event-price">25.000 VNĐ</h1>
             <div className="link-to-ed">
