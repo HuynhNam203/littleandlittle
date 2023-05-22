@@ -1,0 +1,91 @@
+#pre-button-paysuc {
+  position: absolute;
+  top: 450px;
+  left: 186px;
+  width: 40px;
+  filter: drop-shadow(0px 3px 2px #de9959);
+  border-radius: 8px;
+  box-shadow: 0 6px 0 0 rgba(255, 210, 123, 1);
+}
+
+#ne-button-paysuc {
+  position: absolute;
+  top: 450px;
+  left: 1170px;
+  width: 40px;
+  filter: drop-shadow(0px 3px 2px #de9959);
+  border-radius: 8px;
+  box-shadow: 0 6px 0 0 rgba(255, 210, 123, 1);
+}
+
+#khung-paysuc {
+  position: absolute;
+  width: 1100px;
+  height: 450px;
+  left: 150px;
+  top: 225px;
+}
+
+.banner-paysuc {
+  position: relative;
+  width: 220px;
+  height: 350px;
+  top: 256px;
+  left: 284px;
+  margin-right: 28px;
+  background-color: #ffffff;
+  border-radius: 20px;
+}
+
+#ticket-info-box {
+  position: absolute;
+  width: 220px;
+  height: 350px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+#qr-code {
+  width: 120px;
+  height: 120px;
+  padding: 0 50px 0 50px;
+}
+
+#ticket-id {
+  width: 220px;
+  height: fit-content;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+#ticket-name {
+  width: 220px;
+  height: 0;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  color: #FFC226;
+}
+#ticket-dash-line {
+  width: 220px;
+  height: 10px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+#ticket-available-time {
+  width: 220px;
+  height: fit-content
+}
+
+#green-check {
+  width: 40px;
+  height: 40px;
+}

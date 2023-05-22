@@ -61,22 +61,112 @@
   position: absolute;
   top: 420px;
   left: 210px;
-  
 }
 
 #event-mark > #event-line {
   list-style: none;
   padding: 5px;
-  font-family: 'Montserrat';
-font-style: normal;
-font-weight: 550;
-font-size: 20px;
-line-height: 20px;
-text-align: center;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 550;
+  font-size: 20px;
+  line-height: 20px;
+  text-align: center;
 }
 
 #line-mark {
   width: 23px;
   height: 25px;
   padding-right: 5px;
+}
+
+#reservation-template {
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  top: 330px;
+  left: 920px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+#goi-dichvu {
+  width: 270px;
+  height: 46px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#amount-ticket {
+  width: 80px;
+  height: 46px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  margin-right: 24px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#used-date {
+  width: 160px;
+  height: 46px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#cus-name {
+  width: 330px;
+  height: 46px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#cus-phone {
+  width: 330px;
+  height: 46px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#cus-email {
+  width: 330px;
+  height: 46px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+#link-to-payment {
+  margin: auto auto;
+}
+
+#dat-ve {
+  font-family: "iCiel Koni Black";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 41px;
+  letter-spacing: 0.06em;
+  width: 220px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #ff000a;
+  border-radius: 10px;
+  border-color: #ff000a;
 }

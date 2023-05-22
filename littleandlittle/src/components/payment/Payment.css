@@ -1,0 +1,200 @@
+#payment_background {
+  position: absolute;
+  width: 1150px;
+  height: 440px;
+  top: 225px;
+  left: 151px;
+}
+
+#yellow-hair {
+  position: absolute;
+  width: 30vh;
+  top: 277px;
+  height: 60vh;
+  right: 565px;
+  z-index: 3;
+}
+
+#payment-template {
+  width: 340px;
+  height: 340px;
+  position: absolute;
+  top: 300px;
+  left: 930px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+#registered-ticket {
+  position: absolute;
+  width: 593px;
+  height: 340px;
+  top: 296px;
+  left: 247px;
+}
+
+#cost {
+  position: absolute;
+  height: 61px;
+  width: 170px;
+}
+
+#ticket-cost {
+  width: 170px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#amount-of-ticket {
+  position: absolute;
+  height: 61px;
+  width: 100px;
+  left: 230px;
+}
+
+#numb-ticket {
+  width: 58px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#detail-ticket-numb {
+  padding-left: 4px;
+}
+
+#detail-ticket-numb {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  width: 30px;
+}
+
+#ticket-date-used {
+  position: absolute;
+  height: 61px;
+  width: 165px;
+  right: 50px;
+}
+
+#ticket-date-valid {
+  width: 165px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#contact-info {
+  position: absolute;
+  height: 61px;
+  width: 280px;
+  top: 80px;
+}
+
+#contact-info-box {
+  width: 280px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#phone-number {
+  position: absolute;
+  height: 61px;
+  width: 170px;
+  top: 160px;
+}
+
+#phone-number-box {
+  width: 170px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#ticket-email {
+  position: absolute;
+  height: 61px;
+  width: 280px;
+  top: 240px;
+}
+
+#ticket-email-box {
+  width: 280px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#card-numb {
+  width: 330px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#card-date {
+  width: 270px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#card-owner-name {
+  width: 330px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+#cvv-cvc {
+  width: 330px;
+  height: 36px;
+  background: #ffffff;
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  margin-top: 4px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  border: rgba(179, 91, 11, 0.5);
+}
+
+label {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 21px;
+  color: #23221f;
+}
