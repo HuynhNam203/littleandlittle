@@ -80,6 +80,12 @@
   padding-right: 5px;
 }
 
+#box-ticket {
+  display: flex;
+  align-items: center;
+  padding-bottom: 8px;
+}
+
 #reservation-template {
   width: 340px;
   height: 340px;
@@ -91,15 +97,52 @@
   flex-direction: column;
 }
 
-#goi-dichvu {
-  width: 270px;
-  height: 46px;
+.ant-select-selector {
+  width: 270px !important; 
+  height: 46px !important;
+  padding-bottom: 8px;
+  align-items: center;
   background: #ffffff;
   box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
   border-radius: 10px;
   margin-bottom: 10px;
   border: rgba(179, 91, 11, 0.5);
+  appearance: none;
 }
+
+.ant-select-selection-placeholder{
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  border-radius: 5px;
+  color: #575757;
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-select:not(.ant-select-customize-input) .ant-select-selector {
+  border: rgba(179, 91, 11, 0.5);
+  box-shadow: inset -1px 3px 3px rgba(179, 91, 11, 0.5);
+  border-radius: 10px;
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-select-single .ant-select-selector {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000;
+  border: 0 solid #d9d9d9;
+
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-btn-link {
+  display: flex;
+  top: -11px;
+  left: 10px;
+}
+
 
 #amount-ticket {
   width: 80px;
@@ -112,7 +155,7 @@
   border: rgba(179, 91, 11, 0.5);
 }
 
-#used-date {
+.ant-picker {
   width: 160px;
   height: 46px;
   background: #ffffff;
@@ -120,6 +163,21 @@
   margin-bottom: 10px;
   border-radius: 10px;
   border: rgba(179, 91, 11, 0.5);
+}
+
+:where(.css-dev-only-do-not-override-ed5zg0).ant-picker .ant-picker-input >input {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000;
+}
+
+#box-dich-vu {
+  width: 344px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 #cus-name {
@@ -170,3 +228,4 @@
   border-radius: 10px;
   border-color: #ff000a;
 }
+

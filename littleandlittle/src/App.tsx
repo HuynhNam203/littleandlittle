@@ -8,6 +8,8 @@ import PaySuc from './components/paymentsuccess/PaySuc';
 import Contact from './components/contact/Contact';
 import Background from "./assets/background.svg";
 import EventDetail from './components/event/EventDetail';
+import { db } from './config/fbconfig';
+
 
 
 const App: FC = () => {

@@ -4,8 +4,25 @@ import PaymentBackground from "../../assets/paymentBoard.png";
 import "./Payment.css";
 import { NavLink } from "react-router-dom";
 import YellowHair from "../../assets/yellow-hair-girl.png";
+import { useSelector } from "react-redux";
+import { store } from "../../app/store";
+import dayjs, { Dayjs } from "dayjs";
 
 const Payment = () => {
+
+
+  interface Reservation {
+    ticket_cost: string;
+    amount_ticket: string;
+    ticket_used_date: Dayjs;
+    customer_info: string;
+    phone_number: string;
+    customer_email: string;
+  }
+
+  const reservations = useSelector((state: { reservations: Reservation }) =>  store.getState().reservations);
+  const ticketUsedDate = reservations.ticket_used_date;
+  const dateString = ticketUsedDate.format('DD-MM-YYYY');
   return (
     <div>
       <Header />
@@ -22,6 +39,8 @@ const Payment = () => {
             id="ticket-cost"
             name="ticket-cost"
             type="text"
+            value={reservations.ticket_type}
+            disabled
           />
         </div>
         <div id="amount-of-ticket">
@@ -31,6 +50,8 @@ const Payment = () => {
             id="numb-ticket"
             name="ticket-cost"
             type="text"
+            value={reservations.amount_ticket}
+            disabled
           />
           <a id="detail-ticket-numb">vé</a>
           </span>
@@ -41,6 +62,8 @@ const Payment = () => {
             id="ticket-date-valid"
             name="ticket-cost"
             type="text"
+            value={dateString}
+            disabled
           />
         </div>
         <div id="contact-info">
@@ -49,6 +72,8 @@ const Payment = () => {
             id="contact-info-box"
             name="ticket-cost"
             type="text"
+            value={reservations.customer_info}
+            disabled
           />
         </div>
         <div id="phone-number">
@@ -57,6 +82,8 @@ const Payment = () => {
             id="phone-number-box"
             name="ticket-cost"
             type="text"
+            value={reservations.phone_number}
+            disabled
           />
         </div>
         <div id="ticket-email">
@@ -65,6 +92,8 @@ const Payment = () => {
             id="ticket-email-box"
             name="ticket-cost"
             type="text"
+            value={reservations.customer_email}
+            disabled
           />
         </div>
       </div>
