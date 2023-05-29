@@ -157,7 +157,13 @@
   border: rgba(179, 91, 11, 0.5);
 }
 
-#card-date {
+#payment-date {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+#payment-date-picker > .ant-picker {
   width: 270px;
   height: 36px;
   background: #ffffff;
@@ -167,6 +173,12 @@
   margin-bottom: 10px;
   border: rgba(179, 91, 11, 0.5);
 }
+
+#payment-date-button{
+  width: 45px;
+  height: 45px;
+}
+
 
 #card-owner-name {
   width: 330px;

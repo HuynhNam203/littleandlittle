@@ -35,20 +35,27 @@ const Home = () => {
   const [ticketType, setTicketType] = useState("");
   const selectRef = React.useRef<RefSelectProps>(null);
 
-  const handleDD = (selectValue: any) => {
+  type TicketType = "Vé trọn gói" | "Vé vào cổng";
+
+  const ticketPrices: Record<TicketType, number> = {
+    "Vé trọn gói": 100000,
+    "Vé vào cổng": 90000,
+  };
+
+  const handleDD = (selectValue: TicketType) => {
     setSelectValue(selectValue);
     setOpenDD(false);
-    dispatch(updateTicketType(selectValue));
+    dispatch(updateTicketType(ticketPrices[selectValue]));
+  };
+
+  const DropdownBtn = () => {
+    setOpenDD((prevOpen) => !prevOpen);
   };
 
   const handleSche = (selectValue: any) => {
     setSelectValue(selectValue);
     setTicketUsedDate(selectValue);
     setOpenSche(false);
-  };
-
-  const DropdownBtn = () => {
-    setOpenDD((prevOpen) => !prevOpen);
   };
 
   const ScheduleBtn = () => {

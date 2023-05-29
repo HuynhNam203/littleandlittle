@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Header } from "../header/Header";
 import PaymentBackground from "../../assets/paymentBoard.png";
 import "./Payment.css";
@@ -7,22 +7,82 @@ import YellowHair from "../../assets/yellow-hair-girl.png";
 import { useSelector } from "react-redux";
 import { store } from "../../app/store";
 import dayjs, { Dayjs } from "dayjs";
+import Calendar_btn from "../../assets/button-calendar.png";
+import { db } from "../../config/fbconfig";
+import { Button, DatePicker } from "antd";
 
 const Payment = () => {
-
-
   interface Reservation {
-    ticket_cost: string;
-    amount_ticket: string;
+    ticket_type: number;
+    amount_ticket: number;
     ticket_used_date: Dayjs;
     customer_info: string;
-    phone_number: string;
+    phone_number: number;
     customer_email: string;
   }
+  const [selectValue, setSelectValue] = useState("");
+  const [openSche, setOpenSche] = useState(false);
 
-  const reservations = useSelector((state: { reservations: Reservation }) =>  store.getState().reservations);
+  const handleSche = (selectValue: any) => {
+    setSelectValue(selectValue);
+    setOpenSche(false);
+    setCardDate(selectValue);
+  };
+
+  const ScheduleBtn = () => {
+    setOpenSche((prevOpen) => !prevOpen);
+  };
+
+  const removeAccents = (str: string): string => {
+    return str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  };
+
+  const handleInputChange = (
+    event: React.ChangeEvent<HTMLInputElement>
+  ): void => {
+    const value = event.target.value;
+    const uppercasedValue = value.toUpperCase();
+    const processedValue = removeAccents(uppercasedValue);
+    setCardOwnerName(processedValue);
+  };
+
+  const formatCardNumber = (value: string) => {
+    const onlyNumbers = value.replace(/[^\d]/g, "");
+    const formattedValue = onlyNumbers.replace(/(\d{4})/g, "$1 ").trim();
+    return formattedValue;
+  };
+  
+  const handleCardNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value;
+    const formattedValue = formatCardNumber(value);
+    setCardNumber(formattedValue);
+  };
+
+  // const handlePayment = () => {
+  //   db.collection("littleandlittle").add({
+  //     total_money: reservations.ticket_type,
+  //     amount_ticket: reservations.amount_ticket,
+  //     ticket_used_date: reservations.ticket_used_date,
+  //     customer_info: reservations.customer_info,
+  //     phone_number: reservations.phone_number,
+  //     customer_email: reservations.customer_email,
+  //     card_number: cardNumber,
+  //     card_owner_name: cardOwnerName,
+  //     expiration_date: cardDate,
+  //     cvv_cvc: cvvCvc
+  //   });
+  // }
+
+  const [cardNumber, setCardNumber] = useState("");
+  const [cardOwnerName, setCardOwnerName] = useState("");
+  const [cardDate, setCardDate] = useState("");
+  const [cvvCvc, setCvvCvc] = useState("");
+
+  const reservations = useSelector(
+    (state: { reservations: Reservation }) => store.getState().reservations
+  );
   const ticketUsedDate = reservations.ticket_used_date;
-  const dateString = ticketUsedDate.format('DD-MM-YYYY');
+  const dateString = ticketUsedDate.format("DD-MM-YYYY");
   return (
     <div>
       <Header />
@@ -39,21 +99,21 @@ const Payment = () => {
             id="ticket-cost"
             name="ticket-cost"
             type="text"
-            value={reservations.ticket_type}
+            value={reservations.ticket_type * reservations.amount_ticket}
             disabled
           />
         </div>
         <div id="amount-of-ticket">
           <label>Số lượng vé</label>
           <span id="input-amount-ticket-width">
-          <input
-            id="numb-ticket"
-            name="ticket-cost"
-            type="text"
-            value={reservations.amount_ticket}
-            disabled
-          />
-          <a id="detail-ticket-numb">vé</a>
+            <input
+              id="numb-ticket"
+              name="ticket-cost"
+              type="text"
+              value={reservations.amount_ticket}
+              disabled
+            />
+            <a id="detail-ticket-numb">vé</a>
           </span>
         </div>
         <div id="ticket-date-used">
@@ -104,6 +164,10 @@ const Payment = () => {
           name="card-numb"
           type="text"
           placeholder="Nhập số thẻ"
+          value={cardNumber}
+          onChange={handleCardNumberChange}
+          minLength={6}
+          maxLength={14}
         />
         <label>Họ tên chủ thẻ</label>
         <input
@@ -112,16 +176,31 @@ const Payment = () => {
           type="text"
           required
           placeholder="Nhập họ tên chủ thẻ"
+          value={cardOwnerName}
+          onChange={handleInputChange}
         />
         <div id="box-thanh-toan">
           <label>Ngày hết hạn</label>
-          <input
-            id="card-date"
-            name="card-date"
-            type="text"
-            required
-            placeholder="Nhập ngày hết hạn"
-          />
+          <span id="payment-date">
+            <div id="payment-date-picker">
+              <DatePicker
+                open={openSche}
+                onChange={handleSche}
+                suffixIcon={<></>}
+                placeholder="Nhập ngày hết hạn"
+                format="MM/YYYY"
+              />
+            </div>
+            <div id="payment-date-button">
+              <Button type="link" onClick={ScheduleBtn}>
+                <img
+                  className="calendar-btn"
+                  src={Calendar_btn}
+                  style={{ maxWidth: 45, maxHeight: 45, paddingTop: 7 }}
+                />
+              </Button>
+            </div>
+          </span>
         </div>
         <label>CVV/CVC</label>
         <input
@@ -130,6 +209,9 @@ const Payment = () => {
           type="text"
           required
           placeholder="Nhập cvv/cvs"
+          value={cvvCvc}
+          onChange={(e) => setCvvCvc(e.target.value)}
+          maxLength={4}
         />
         <div id="link-to-payment">
           <NavLink to="/PaySuc">
