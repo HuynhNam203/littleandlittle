@@ -10,6 +10,8 @@ import dayjs, { Dayjs } from "dayjs";
 import Calendar_btn from "../../assets/button-calendar.png";
 import { db } from "../../config/fbconfig";
 import { Button, DatePicker } from "antd";
+import { Timestamp } from "firebase/firestore";
+import moment from 'moment';
 
 const Payment = () => {
   interface Reservation {
@@ -46,37 +48,30 @@ const Payment = () => {
     setCardOwnerName(processedValue);
   };
 
-  const formatCardNumber = (value: string) => {
-    const onlyNumbers = value.replace(/[^\d]/g, "");
-    const formattedValue = onlyNumbers.replace(/(\d{4})/g, "$1 ").trim();
-    return formattedValue;
-  };
-  
-  const handleCardNumberChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value;
-    const formattedValue = formatCardNumber(value);
-    setCardNumber(formattedValue);
+  const handlePayment = () => {
+    const ticketUsedDate = Timestamp.fromDate(reservations.ticket_used_date.toDate());
+    const expirationDate = moment(cardDate, 'MM/YYYY').toDate();
+    const expirationTimestamp = Timestamp.fromDate(expirationDate);
+
+
+    db.collection("littleandlittle").add({
+      total_money: reservations.ticket_type,
+      amount_ticket: reservations.amount_ticket,
+      ticket_used_date: ticketUsedDate,
+      customer_info: reservations.customer_info,
+      phone_number: reservations.phone_number,
+      customer_email: reservations.customer_email,
+      card_number: cardNumber,
+      card_owner_name: cardOwnerName,
+      expiration_date: expirationTimestamp,
+      cvv_cvc: cvvCvc,
+    });
   };
 
-  // const handlePayment = () => {
-  //   db.collection("littleandlittle").add({
-  //     total_money: reservations.ticket_type,
-  //     amount_ticket: reservations.amount_ticket,
-  //     ticket_used_date: reservations.ticket_used_date,
-  //     customer_info: reservations.customer_info,
-  //     phone_number: reservations.phone_number,
-  //     customer_email: reservations.customer_email,
-  //     card_number: cardNumber,
-  //     card_owner_name: cardOwnerName,
-  //     expiration_date: cardDate,
-  //     cvv_cvc: cvvCvc
-  //   });
-  // }
-
-  const [cardNumber, setCardNumber] = useState("");
+  const [cardNumber, setCardNumber] = useState(Number);
   const [cardOwnerName, setCardOwnerName] = useState("");
   const [cardDate, setCardDate] = useState("");
-  const [cvvCvc, setCvvCvc] = useState("");
+  const [cvvCvc, setCvvCvc] = useState(Number);
 
   const reservations = useSelector(
     (state: { reservations: Reservation }) => store.getState().reservations
@@ -165,7 +160,7 @@ const Payment = () => {
           type="text"
           placeholder="Nhập số thẻ"
           value={cardNumber}
-          onChange={handleCardNumberChange}
+          onChange={(e) => setCardNumber(Number(e.target.value))}
           minLength={6}
           maxLength={14}
         />
@@ -210,7 +205,7 @@ const Payment = () => {
           required
           placeholder="Nhập cvv/cvs"
           value={cvvCvc}
-          onChange={(e) => setCvvCvc(e.target.value)}
+          onChange={(e) => setCvvCvc(Number(e.target.value))}
           maxLength={4}
         />
         <div id="link-to-payment">
